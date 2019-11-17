@@ -1,10 +1,26 @@
 #your code
-a = 2
-b = 3
-L = [1, 2, 6]
-for i in range(len(L)-1):
-    if(abs(L[i] - L[i+1]) == 1): 
-        print(i, L[i] - L[i+1])
-        index = i
+L = ['Aa', 'ABBA', 'ab', 'AaAa', 'AaAaAa']
 
-print(index)
+def counter(T):
+    ncList = []
+    ncmax = 0
+    for i, v in enumerate(T):
+        cList = []
+        v = v.lower()
+        ncList.append(0)
+        for c in v: 
+            if(not c in cList):
+                ncList[i] = ncList[i] + 1
+                cList.append(c)
+        if (ncList[i] > ncmax):
+            ncmax = ncList[i]
+    lenMax = 0
+    for i, v in enumerate(ncList):
+        if (v == ncmax):
+            if(len(T[i]) > lenMax):
+                lenMax = len(T[i])
+    return lenMax
+
+print counter(L)
+
+ 
