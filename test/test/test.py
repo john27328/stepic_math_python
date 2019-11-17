@@ -1,13 +1,10 @@
 #your code
 a = 2
 b = 3
-def sum2(a, b):
-    if(type(a) in (int, float) and type(b) in (int, float)): 
-        return a + b
-    if(type(b) in (int, float)): 
-        return "1st argument is not a number"
-    if(type(a) in (int, float)): 
-        return "2nd argument is not a number"
-    return "all arguments are not a numbers"
+L = [1, 2, 6]
+for i in range(len(L)-1):
+    if(abs(L[i] - L[i+1]) == 1): 
+        print(i, L[i] - L[i+1])
+        index = i
 
-print(sum2(a,b))
+print(index)
